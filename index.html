@@ -495,6 +495,10 @@ html { scroll-behavior: smooth; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 @media (max-width: 768px) {
   .nav-links { display: none; }
+  .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--blue); border-radius: 8px; background: var(--white); color: var(--blue); padding: 8px 14px; font: inherit; cursor: pointer; }
+  .navbar.menu-open .nav-links { display: flex; position: fixed; top: 76px; left: 20px; right: 20px; flex-direction: column; gap: 12px; padding: 16px; margin: 0; border-radius: 12px; background: var(--white); box-shadow: 0 8px 28px rgba(30,94,255,.16); z-index: 1001; }
+  .navbar.menu-open .nav-links li { width: 100%; }
+  .navbar.menu-open .nav-links a { display: block; padding: 8px 10px; }
   .hero-content { grid-template-columns: 1fr; gap: 40px; }
   .hero-text h1 { font-size: 32px; }
   .hero-text p { font-size: 16px; }
@@ -533,11 +537,12 @@ html { scroll-behavior: smooth; }
       <div class="logo-icon">ن</div>
       <span>نویسا</span>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" id="mainNav">
       <li><a href="#services">خدمات</a></li>
       <li><a href="#about">درباره ما</a></li>
       <li><a href="#order" class="btn-nav">سفارش آنلاین</a></li>
     </ul>
+    <button class="mobile-menu-toggle" id="mobileNavToggle" type="button" aria-controls="mainNav" aria-expanded="false">منو</button>
   </div>
 </nav>
 
@@ -680,7 +685,7 @@ html { scroll-behavior: smooth; }
     </div>
   </div>
   <div class="footer-bottom">
-    © ۱۴۰۴ نویسا — تمامی حقوق محفوظ است.
+    © ۱۴۰۵ نویسا — تمامی حقوق محفوظ است.
   </div>
 </footer>
 
@@ -737,6 +742,17 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+// ===== ناوبری موبایل =====
+const mobileNavToggle = document.getElementById('mobileNavToggle');
+const mobileNav = document.querySelector('.navbar');
+mobileNavToggle.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('menu-open');
+  mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+});
+document.querySelectorAll('#mainNav a').forEach(link => link.addEventListener('click', () => {
+  mobileNav.classList.remove('menu-open');
+  mobileNavToggle.setAttribute('aria-expanded', 'false');
+}));
 </script>
 
 </body>
