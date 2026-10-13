@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://amirrezakiyani.github.io/nevisa-world/sitemap.xml
+Sitemap: https://nevisa-world.pages.dev/sitemap.xml
