@@ -761,7 +761,9 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
         <p>برای ارسال جزئیات درخواست به‌صورت آنلاین</p>
       </article>
       <article class="nevisa-stat-card">
-        <span class="nevisa-stat-number" data-count="100">۰</span><span class="nevisa-stat-plus" aria-hidden="true">+</span>
+        <div class="nevisa-stat-value" aria-label="هدف: به بیش از ۱۰۰ سفارش رسیدن">
+          <span class="nevisa-stat-plus" aria-hidden="true">+</span><span class="nevisa-stat-number" data-count="100">۰</span>
+        </div>
         <h3>هدف سفارش‌ها</h3>
         <p>هدف رشد نویسا؛ نه تعداد سفارش‌های ثبت‌شده تا امروز</p>
       </article>
@@ -1619,6 +1621,134 @@ body::before {
   font-weight: 900;
   vertical-align: .12em;
   margin-right: 4px;
+}
+</style>
+
+
+<style id="nevisa-final-layout-polish">
+/* Explicitly center all English copy inside the first/hero card. */
+.hero-text,
+.hero-text h1,
+.hero-text .hero-en,
+.hero-text .hero-english,
+.hero-text .hero-kicker,
+.hero-text .hero-buttons {
+  text-align: center !important;
+}
+.hero-text .hero-en,
+.hero-text .hero-english {
+  display: block !important;
+  width: 100% !important;
+  direction: ltr !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.hero-text .hero-buttons {
+  justify-content: center !important;
+}
+
+/* Four compact statistic cards, kept on one horizontal row. */
+.nevisa-stats {
+  padding: clamp(34px, 4.2vw, 54px) clamp(10px, 2vw, 20px) !important;
+}
+.nevisa-stats-inner {
+  max-width: 1240px !important;
+  width: 100% !important;
+}
+.nevisa-stats-heading {
+  margin-bottom: clamp(18px, 2.5vw, 28px) !important;
+}
+.nevisa-stats-heading h2 {
+  font-size: clamp(22px, 2.5vw, 32px) !important;
+}
+.nevisa-stats-heading p {
+  font-size: clamp(12px, 1.25vw, 14px) !important;
+}
+.nevisa-stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(7px, 1.35vw, 16px) !important;
+  align-items: stretch !important;
+}
+.nevisa-stat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  padding: clamp(10px, 1.65vw, 20px) clamp(6px, 1vw, 14px) !important;
+  border-radius: clamp(12px, 1.6vw, 20px) !important;
+  text-align: center !important;
+}
+.nevisa-stat-number {
+  display: block !important;
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  line-height: 1.18 !important;
+  margin: 0 0 6px !important;
+}
+.nevisa-stat-card h3 {
+  font-size: clamp(11px, 1.35vw, 16px) !important;
+  line-height: 1.5 !important;
+  overflow-wrap: anywhere !important;
+  margin: 0 0 5px !important;
+}
+.nevisa-stat-card p {
+  font-size: clamp(9px, 1.02vw, 12px) !important;
+  line-height: 1.65 !important;
+  overflow-wrap: anywhere !important;
+  margin: 0 !important;
+}
+.nevisa-stat-value {
+  display: flex !important;
+  direction: ltr !important;
+  align-items: baseline !important;
+  justify-content: center !important;
+  gap: 2px !important;
+  white-space: nowrap !important;
+  line-height: 1.18 !important;
+  margin: 0 0 6px !important;
+}
+.nevisa-stat-value .nevisa-stat-number {
+  display: inline-block !important;
+  font-size: clamp(26px, 3.2vw, 42px) !important;
+  margin: 0 !important;
+}
+.nevisa-stat-value .nevisa-stat-plus {
+  display: inline-block !important;
+  font-size: clamp(19px, 2.3vw, 30px) !important;
+  margin: 0 !important;
+  vertical-align: baseline !important;
+  line-height: 1 !important;
+}
+@media (max-width: 680px) {
+  .nevisa-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+  .nevisa-stat-card {
+    display: flex !important;
+    grid-template-columns: none !important;
+    padding: 9px 4px !important;
+    border-radius: 11px !important;
+  }
+  .nevisa-stat-number,
+  .nevisa-stat-value .nevisa-stat-number {
+    font-size: clamp(20px, 6vw, 30px) !important;
+    margin-bottom: 5px !important;
+  }
+  .nevisa-stat-value .nevisa-stat-number { margin: 0 !important; }
+  .nevisa-stat-value .nevisa-stat-plus {
+    font-size: clamp(16px, 4vw, 23px) !important;
+  }
+  .nevisa-stat-card h3 {
+    font-size: clamp(9px, 2.6vw, 12px) !important;
+    line-height: 1.4 !important;
+  }
+  .nevisa-stat-card p {
+    font-size: clamp(8px, 2.05vw, 10px) !important;
+    line-height: 1.45 !important;
+  }
 }
 </style>
 
