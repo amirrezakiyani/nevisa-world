@@ -626,6 +626,28 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-card,.btn-primary,.btn-secondary,.btn-nav,.btn-submit{transition:none!important}}
 </style>
 
+
+<style id="nevisa-visible-crystal-fix">
+.crystal-scene{position:relative;display:grid;place-items:center;isolation:isolate;min-height:390px;overflow:visible;perspective:1100px}
+.crystal-aura{position:absolute;width:82%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#8eaaff45 0%,#9b8bff25 42%,#73ead51a 60%,transparent 73%);filter:blur(9px);pointer-events:none}
+.crystal-orbit{position:absolute;left:50%;top:50%;border:1px solid #7896ef55;border-radius:50%;pointer-events:none}
+.crystal-orbit-one{width:87%;height:36%;transform:translate(-50%,-50%) rotate(-27deg)}
+.crystal-orbit-two{width:72%;height:52%;transform:translate(-50%,-50%) rotate(48deg);border-color:#36cdb34a}
+.crystal-art{position:relative;z-index:2;width:min(100%,430px);height:auto;overflow:visible;filter:drop-shadow(0 24px 22px #455ec333);transform:rotate(-3deg);animation:crystalFloat 6s ease-in-out infinite}
+.crystal-art text{user-select:none}
+.crystal-scene .float-chip{z-index:4}
+.crystal-scene .chip-one{top:15%;left:0}
+.crystal-scene .chip-two{top:24%;right:0}
+.crystal-scene .chip-three{bottom:10%;left:9%}
+.crystal-scene .spark-one{top:18%;right:22%}
+.crystal-scene .spark-two{bottom:22%;right:8%}
+.crystal-scene .spark-three{top:45%;left:2%}
+@keyframes crystalFloat{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(0deg)}}
+@media(max-width:850px){.crystal-scene{width:100%;min-height:360px}.crystal-art{width:min(92%,390px)}}
+@media(max-width:620px){.crystal-scene{min-height:310px}.crystal-art{width:min(100%,330px)}.crystal-scene .float-chip{padding:8px 11px;font-size:11px}.crystal-scene .chip-one{left:-2%;top:13%}.crystal-scene .chip-two{right:-2%;top:22%}.crystal-scene .chip-three{left:3%;bottom:7%}}
+@media(prefers-reduced-motion:reduce){.crystal-art{animation:none}}
+</style>
+
 </head>
 <body>
 
@@ -673,13 +695,39 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
       </div>
     </div>
     <div class="scene-container" aria-label="تصویر سه‌بعدی انتزاعی نویسا">
-      <div class="prism-scene" aria-hidden="true">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="prism-shadow"></div>
-        <div class="prism">
-          <div class="prism-face face-front"><span class="prism-symbol">ن</span><span class="prism-word">NEVISA</span><span class="prism-caption">CREATE WITH CLARITY</span></div>
-          <div class="prism-face face-side"></div><div class="prism-face face-top"></div>
-        </div>
+      <div class="prism-scene crystal-scene" aria-hidden="true">
+        <div class="crystal-aura"></div>
+        <div class="crystal-orbit crystal-orbit-one"></div>
+        <div class="crystal-orbit crystal-orbit-two"></div>
+        <svg class="crystal-art" viewBox="0 0 500 460" role="img" aria-label="الماس شیشه‌ای سه‌بعدی چندوجهی">
+          <defs>
+            <linearGradient id="crystalTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".98"/><stop offset=".48" stop-color="#b9d4ff" stop-opacity=".85"/><stop offset="1" stop-color="#a6f9ed" stop-opacity=".9"/></linearGradient>
+            <linearGradient id="crystalLeft" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#dff8ff" stop-opacity=".95"/><stop offset=".55" stop-color="#7299ff" stop-opacity=".82"/><stop offset="1" stop-color="#7559e8" stop-opacity=".95"/></linearGradient>
+            <linearGradient id="crystalRight" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9cf7ed" stop-opacity=".9"/><stop offset=".5" stop-color="#9ba7ff" stop-opacity=".84"/><stop offset="1" stop-color="#d9b9ff" stop-opacity=".92"/></linearGradient>
+            <linearGradient id="crystalCenter" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".95"/><stop offset=".45" stop-color="#b5c9ff" stop-opacity=".85"/><stop offset="1" stop-color="#70e3d8" stop-opacity=".86"/></linearGradient>
+            <radialGradient id="crystalGlow"><stop offset="0" stop-color="#8ca7ff" stop-opacity=".48"/><stop offset="1" stop-color="#8ca7ff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <ellipse cx="250" cy="420" rx="145" ry="22" fill="#546fe0" opacity=".16"/>
+          <circle cx="250" cy="220" r="190" fill="url(#crystalGlow)"/>
+          <g stroke="#fff" stroke-width="2" stroke-linejoin="round">
+            <path d="M250 42 355 106 425 218 250 420 75 218 145 106Z" fill="url(#crystalTop)" fill-opacity=".48"/>
+            <path d="M250 42 145 106 220 126 280 126 355 106Z" fill="url(#crystalTop)"/>
+            <path d="M145 106 75 218 195 214 220 126Z" fill="url(#crystalLeft)"/>
+            <path d="M355 106 425 218 305 214 280 126Z" fill="url(#crystalRight)"/>
+            <path d="M220 126 195 214 250 420 250 126Z" fill="url(#crystalCenter)"/>
+            <path d="M280 126 305 214 250 420 250 126Z" fill="url(#crystalRight)" fill-opacity=".9"/>
+            <path d="M75 218 195 214 250 420Z" fill="url(#crystalLeft)"/>
+            <path d="M425 218 305 214 250 420Z" fill="url(#crystalRight)"/>
+            <path d="M145 106 250 42 220 126Z" fill="#fff" fill-opacity=".55"/>
+            <path d="M355 106 250 42 280 126Z" fill="#fff" fill-opacity=".78"/>
+            <path d="M195 214 305 214 250 420Z" fill="#edfaff" fill-opacity=".5"/>
+          </g>
+          <path d="M145 106 250 42 355 106 425 218 250 420 75 218Z" fill="none" stroke="#fff" stroke-width="3" stroke-opacity=".85" stroke-linejoin="round"/>
+          <path d="M168 111 231 68" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-opacity=".9"/>
+          <path d="M108 213 144 151" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-opacity=".7"/>
+          <text x="250" y="238" text-anchor="middle" font-size="35" font-weight="900" fill="#304d9c" fill-opacity=".8" font-family="Vazirmatn,Arial,sans-serif">ن</text>
+          <text x="250" y="270" text-anchor="middle" font-size="13" font-weight="800" letter-spacing="4" fill="#304d9c" font-family="Arial,sans-serif">NEVISA</text>
+        </svg>
         <div class="float-chip chip-one">ترجمه <span>TRANSLATE</span></div>
         <div class="float-chip chip-two">تایپ <span>TYPE</span></div>
         <div class="float-chip chip-three">طراحی <span>DESIGN</span></div>
