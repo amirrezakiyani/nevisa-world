@@ -737,6 +737,33 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
   </div>
 </section>
 
+<section class="nevisa-stats" id="nevisa-stats" aria-labelledby="nevisa-stats-title">
+  <div class="nevisa-stats-inner">
+    <div class="nevisa-stats-heading">
+      <span class="nevisa-stats-kicker" lang="en" dir="ltr">NEVISA AT A GLANCE</span>
+      <h2 id="nevisa-stats-title">نویسا در چند عدد</h2>
+      <p>نگاهی سریع به خدمات و امکانات سایت</p>
+    </div>
+    <div class="nevisa-stats-grid">
+      <article class="nevisa-stat-card">
+        <span class="nevisa-stat-number" data-count="4">۰</span>
+        <h3>گروه خدمات</h3>
+        <p>تایپ، ترجمه، پروژه و فایل آموزشی</p>
+      </article>
+      <article class="nevisa-stat-card">
+        <span class="nevisa-stat-number" data-count="2">۰</span>
+        <h3>زبان کاری</h3>
+        <p>فارسی و انگلیسی</p>
+      </article>
+      <article class="nevisa-stat-card">
+        <span class="nevisa-stat-number" data-count="1">۰</span>
+        <h3>فرم ثبت سفارش</h3>
+        <p>برای ارسال جزئیات درخواست به‌صورت آنلاین</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="services" id="services">
   <h2 class="section-title fade-in">خدمات <span>ما</span></h2>
   <p class="section-subtitle fade-in">هر آنچه برای پروژه‌های دانشگاهی و کاری‌تان نیاز دارید</p>
@@ -832,7 +859,7 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
     </div>
     <div>
       <h3>ارتباط با ما</h3>
-      <p>📧 <a href="mailto:amirreki.5685@gmail.com">amirreki.5685@gmail.com</a></p>
+      <p>📧 <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amirreki.5685%40gmail.com&amp;su=%D8%AF%D8%B1%D8%AE%D9%88%D8%A7%D8%B3%D8%AA%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%86%D9%88%DB%8C%D8%B3%D8%A7" target="_blank" rel="noopener noreferrer" aria-label="ارسال ایمیل به نویسا در Gmail">amirreki.5685@gmail.com</a></p>
       <p>برای پیگیری، از فرم ثبت سفارش استفاده کنید.</p>
     </div>
     <div>
@@ -1429,6 +1456,153 @@ body::before {
   .hero-text { padding: 22px 18px !important; border-radius: 22px !important; }
 }
 </style>
+
+
+<style id="nevisa-top-spacing-stats">
+/* Keep the centered hero card rounded, with clear breathing room below the fixed navbar. */
+.hero {
+  padding-top: clamp(104px, 12vh, 138px) !important;
+}
+.hero-text {
+  margin-top: clamp(12px, 2vh, 24px) !important;
+  border-radius: 34px !important;
+  overflow: hidden;
+}
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 94px !important;
+  }
+  .hero-text {
+    margin-top: 10px !important;
+    border-radius: 25px !important;
+  }
+}
+
+/* Compact service facts, with count-up triggered when this section enters view. */
+.nevisa-stats {
+  position: relative;
+  padding: clamp(46px, 6vw, 76px) 20px;
+  background: rgba(239, 245, 255, .78) !important;
+  border-top: 1px solid rgba(92, 113, 169, .18);
+  border-bottom: 1px solid rgba(92, 113, 169, .18);
+}
+.nevisa-stats-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.nevisa-stats-heading {
+  text-align: center;
+  margin: 0 auto 30px;
+}
+.nevisa-stats-kicker {
+  display: inline-block;
+  color: #4659b3;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  margin-bottom: 8px;
+}
+.nevisa-stats-heading h2 {
+  color: #192945;
+  font-size: clamp(27px, 3.2vw, 36px);
+  line-height: 1.35;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+.nevisa-stats-heading p {
+  color: #455772;
+  font-size: 15px;
+  margin: 0;
+}
+.nevisa-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.nevisa-stat-card {
+  text-align: center;
+  padding: 26px 18px 24px;
+  border: 1px solid rgba(91, 111, 168, .22);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .93);
+  box-shadow: 0 14px 32px rgba(36, 52, 99, .09), inset 0 1px rgba(255,255,255,.98);
+}
+.nevisa-stat-number {
+  display: block;
+  color: #354cb4;
+  font-size: clamp(42px, 5vw, 60px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.nevisa-stat-card h3 {
+  color: #1d2e49;
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0 0 5px;
+}
+.nevisa-stat-card p {
+  color: #455772;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+@media (max-width: 680px) {
+  .nevisa-stats-grid { grid-template-columns: 1fr; gap: 12px; }
+  .nevisa-stat-card { display: grid; grid-template-columns: 74px 1fr; column-gap: 12px; text-align: right; align-items: center; padding: 18px; }
+  .nevisa-stat-number { grid-row: span 2; margin: 0; font-size: 42px; text-align: center; }
+  .nevisa-stat-card h3 { align-self: end; font-size: 17px; }
+  .nevisa-stat-card p { align-self: start; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nevisa-stat-number { scroll-behavior: auto; }
+}
+</style>
+<script id="nevisa-stat-count-up">
+(() => {
+  const section = document.getElementById('nevisa-stats');
+  if (!section) return;
+  const counters = Array.from(section.querySelectorAll('[data-count]'));
+  const formatNumber = (value) => {
+    try { return Math.round(value).toLocaleString('fa-IR'); }
+    catch (_) { return String(Math.round(value)); }
+  };
+  let started = false;
+  const startCounters = () => {
+    if (started) return;
+    started = true;
+    const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    counters.forEach((counter) => {
+      const target = Number(counter.dataset.count || 0);
+      if (reducedMotion) {
+        counter.textContent = formatNumber(target);
+        return;
+      }
+      const duration = 1250;
+      const startTime = performance.now();
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        counter.textContent = formatNumber(target * eased);
+        if (progress < 1) window.requestAnimationFrame(tick);
+      };
+      window.requestAnimationFrame(tick);
+    });
+  };
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        startCounters();
+        observer.disconnect();
+      }
+    }, { threshold: 0.28 });
+    observer.observe(section);
+  } else {
+    startCounters();
+  }
+})();
+</script>
 
 </body>
 </html>
