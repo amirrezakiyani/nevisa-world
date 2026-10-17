@@ -760,6 +760,11 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
         <h3>فرم ثبت سفارش</h3>
         <p>برای ارسال جزئیات درخواست به‌صورت آنلاین</p>
       </article>
+      <article class="nevisa-stat-card">
+        <span class="nevisa-stat-number" data-count="100">۰</span><span class="nevisa-stat-plus" aria-hidden="true">+</span>
+        <h3>هدف سفارش‌ها</h3>
+        <p>هدف رشد نویسا؛ نه تعداد سفارش‌های ثبت‌شده تا امروز</p>
+      </article>
     </div>
   </div>
 </section>
@@ -821,7 +826,7 @@ body{font-family:'Vazirmatn',Tahoma,Arial,sans-serif!important;color:var(--ink)!
 
       <div class="form-group">
         <label>نام و نام خانوادگی</label>
-        <input type="text" id="name" name="name" required placeholder="مثال: علی محمدی">
+        <input type="text" id="name" name="name" required placeholder="مثال: امیررضا کیانی">
       </div>
       <div class="form-group">
         <label>ایمیل</label>
@@ -1603,6 +1608,19 @@ body::before {
   }
 })();
 </script>
+
+
+<style id="nevisa-stat-plus-style">
+.nevisa-stat-plus {
+  display: inline-block;
+  color: #354cb4;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1;
+  font-weight: 900;
+  vertical-align: .12em;
+  margin-right: 4px;
+}
+</style>
 
 </body>
 </html>
