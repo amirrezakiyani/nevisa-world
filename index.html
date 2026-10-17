@@ -1286,5 +1286,82 @@ body:before,body:after{display:none!important;content:none!important}
 }
 </style>
 
+
+<style id="nevisa-fixed-fullpage-photo">
+/* Use bg.jpg as one fixed, full-viewport image behind the entire site. */
+html, body {
+  background: transparent !important;
+}
+body {
+  position: relative !important;
+  isolation: isolate !important;
+}
+body::before {
+  content: "" !important;
+  display: block !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  clip-path: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  background-image:
+    linear-gradient(rgba(247,249,255,.28), rgba(247,249,255,.28)),
+    url("./bg.jpg") !important;
+  background-size: cover, cover !important;
+  background-position: center center, center center !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+body::after {
+  display: none !important;
+  content: none !important;
+}
+/* Let the fixed picture remain visible through the site sections. */
+.hero, .services, .about, .order {
+  background: rgba(246,249,255,.30) !important;
+}
+.hero {
+  min-height: calc(100svh - 68px) !important;
+}
+/* Keep text readable while allowing the fixed image to show through. */
+.service-card {
+  background: rgba(255,255,255,.78) !important;
+}
+.about-container {
+  background: rgba(248,250,255,.76) !important;
+}
+.form-container {
+  background: rgba(255,255,255,.84) !important;
+}
+.footer {
+  background: rgba(21,37,66,.84) !important;
+}
+/* The full-page photo is the hero visual, so don't show a separate crystal above it. */
+.hero .scene-container {
+  display: none !important;
+}
+.hero-content {
+  grid-template-columns: 1fr !important;
+  max-width: 900px !important;
+  justify-items: center !important;
+}
+.hero-text {
+  width: 100% !important;
+  text-align: center !important;
+}
+.hero-buttons {
+  justify-content: center !important;
+}
+@media (max-width: 620px) {
+  body::before {
+    background-attachment: scroll, scroll !important;
+  }
+}
+</style>
+
 </body>
 </html>
