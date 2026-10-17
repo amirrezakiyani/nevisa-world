@@ -1363,5 +1363,72 @@ body::after {
 }
 </style>
 
+
+<style id="nevisa-readable-content">
+/* Improve contrast while preserving the fixed background photo. */
+body { color: #18263f !important; }
+body::before {
+  background-image:
+    linear-gradient(rgba(20, 34, 58, .10), rgba(20, 34, 58, .10)),
+    url("./bg.jpg") !important;
+}
+.hero, .services, .about, .order {
+  background: rgba(244, 247, 255, .48) !important;
+}
+.hero-text {
+  padding: clamp(22px, 3.4vw, 42px) !important;
+  border: 1px solid rgba(69, 86, 127, .18) !important;
+  border-radius: 28px !important;
+  background: rgba(255, 255, 255, .88) !important;
+  box-shadow: 0 20px 52px rgba(20, 34, 72, .16), inset 0 1px rgba(255,255,255,.98) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+}
+.hero-text h1 { color: #17253e !important; text-shadow: none !important; }
+.hero-text h1 > span:first-of-type {
+  background: linear-gradient(100deg, #244fb8 0%, #7040b5 53%, #087b70 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+.hero-text h1 .hero-en { color: #4a5975 !important; }
+.hero-text p, .hero-text .hero-english { color: #334663 !important; }
+.hero-kicker {
+  color: #354c80 !important;
+  background: #f4f6ff !important;
+  border-color: rgba(71, 91, 160, .28) !important;
+}
+.section-title, .about-text h2 { color: #172740 !important; }
+.section-title span, .about-text h2 span { color: #344fb5 !important; }
+.section-subtitle, .about-text p { color: #364965 !important; }
+.service-card {
+  background: rgba(255, 255, 255, .94) !important;
+  border-color: rgba(92, 111, 159, .24) !important;
+  box-shadow: 0 14px 34px rgba(29, 44, 82, .12) !important;
+}
+.service-card h3 { color: #1e2e49 !important; }
+.service-card p { color: #3e506b !important; }
+.about-container {
+  background: rgba(250, 251, 255, .94) !important;
+  border-color: rgba(92, 111, 159, .24) !important;
+}
+.about-features li, .form-group label { color: #263a57 !important; }
+.form-container {
+  background: rgba(255, 255, 255, .96) !important;
+  border-color: rgba(92, 111, 159, .24) !important;
+}
+.form-container input, .form-container select, .form-container textarea {
+  color: #172740 !important;
+  background: #fff !important;
+  border-color: #b9c7e0 !important;
+}
+.form-container input::placeholder, .form-container textarea::placeholder { color: #66758f !important; opacity: 1 !important; }
+.nav-links a:not(.btn-nav) { color: #263750 !important; }
+.footer { background: rgba(19, 31, 55, .96) !important; }
+.footer p, .footer-bottom { color: #e2e9f7 !important; }
+@media (max-width: 620px) {
+  .hero-text { padding: 22px 18px !important; border-radius: 22px !important; }
+}
+</style>
+
 </body>
 </html>
